@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful log in</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <!-- navber -->
+    <nav class="navbar bg-body-tertiary" style="box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!-- <i class="fa-regular fa-user" style="color: #FFD43B;"></i> -->
+                Welcome
+                <span style="font-weight: bold;" id="showuser"></span>
+            </a>
+            <ul class="nav-item">
+                <li><button id="logout">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+<div class="homeicon"><i class="fa-solid fa-arrow-left"></i></div>
+    <!-- body -->
+    <div class="main">
+        <div class="containe1">
+            <div class="image-container">
+                <img id="userImage" src="new.images/userimage.png" alt="Your Image">
+            </div>
+            <input type="file" id="imageupload" accept="image/*" style="display: none;">
+            <label class="upl" for="imageupload">Upload image</label>
+        </div>
+        <div class="container2">
+            <div class="form-group text-white">
+                <label for="name">Name:</label>
+                <input  style="font-weight: 700;" type="text" id="name" class="inp">
+            </div>
+            <div class="form-group text-white" >
+                <label for="email">Email:</label>
+                <input  style="font-weight: 700;" type="email" id="email" class="inp2" disabled>
+            </div>
+
+            <div class="form-group text-white">
+                <label for="age">Age:</label>
+                <input  style="font-weight: 700;" type="text" id="age" class="inp">
+            </div>
+
+            <div class="form-group text-white">
+                <label for="gender">Gender:</label>
+                <input  style="font-weight: 700;" type="text" id="gen" class="inp">
+            </div>
+
+            <div class="form-group text-white">
+                <label for="phone">Phone Number:</label>
+                <input  style="font-weight: 700;" type="tel" id="phone" class="inp">
+            </div>
+            <div class="form-group text-white">
+                <label for="country">Country:</label>
+                <input  style="font-weight: 700;" type="text" id="country" class="inp">
+            </div>
+
+            <div class="form-group text-white">
+                <label for="city">City:</label>
+                <input style="font-weight: 700;" type="text" id="city" class="inp">
+            </div>
+            <button id="edit">Edit Profile</button>
+            <button id="emailbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Email</button>
+            <button id="save">Save</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">update Email</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Current Email</label>
+                  <input type="text" class="form-control" id="oldemail">
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">New Email</label>
+                  <input type="text" class="form-control" id="newemail"></input>
+                </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label" >password</label>
+                    <input type="password" class="form-control" id="oldpassword"></input>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="updateemail">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

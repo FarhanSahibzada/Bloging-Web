@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(images/background-1.jpg);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh !important;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.form1,
+.form2 {
+    /* background-color: whitesmoke; */
+    padding: 30px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+    border: 1px ridge;
+    border-radius: 12px;
+    background-color: transparent transparent transparent;
+    backdrop-filter: blur(15px);
+
+}
+
+#gmail,
+#cgmail {
+    margin-left: 50px;
+}
+
+input {
+    background-color: transparent !important;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 17px;
+    margin-left: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid !important;
+    position: relative;
+
+}
+::placeholder{
+    padding-left: 30px;
+    color: rgb(52, 56, 52);
+}
+.dd{
+    position: absolute;
+    top: 89px;
+    left: 150px;
+}
+.es{
+    position: absolute;
+    top: 151px;
+    left: 150px;
+}
+.ps{
+    position: absolute;
+    top: 212px;
+    left: 150px;
+}
+.ee{
+    position: absolute;
+    top: 151px;
+    left: 160px; 
+}
+.pp{
+    position: absolute;
+    top: 211px;
+    left: 163px;
+}.ss{
+    position: absolute;
+    top: 89px;
+    left: 160px;
+}
+#submit,
+#login {
+    padding: 10px 20px;
+    background-color: aqua;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s ease-in-out;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+#submit,
+#login:active {
+    box-shadow: none;
+    transform: translateY(6px);
+}
+
+#already,#dont {
+    background-color: transparent !important;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+#cpassword{
+margin-left: 23px;
+}

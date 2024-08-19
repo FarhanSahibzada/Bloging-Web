@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sankofa+Display&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+.image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: none;
+}
+.myblog {
+    position: absolute;
+    right: 80px;
+    width: 90px;
+    top: 30%;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 12px;
+    z-index: 1; 
+}
+
+.myblog:hover {
+    color: black;
+}
+
+.myblog::before {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    transition: 0.4s all ease;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border-radius: 0;
+    z-index: 0; 
+}
+
+.myblog:hover::before {
+    background-color: white;
+    border-radius: 40px;
+    bottom: 0;
+    z-index: -1; 
+}
+
+#userImage {
+    border-radius: 50%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Center the dropdown menu under the button */
+.dropdown-menu {
+    left: 50%;
+    border-radius: 12px;
+    transform: translateX(-50%);
+}
+
+/* Center the content inside the dropdown */
+.dropdown-item {
+    text-align: center;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.blogs {
+    background-color: #FF7F50;
+    z-index: 2;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.div1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn1 {
+    display: block;
+    background-color: #FF0000;
+    padding: 6px 12px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 0.90px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+&:hover{
+    scale: 1.05;
+}
+}
+
+.theme {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-div1 {
+    position: absolute;
+    bottom: -400px;
+    /* Start from below the visible area */
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.image-div1:nth-child(1) {
+    width: 500px;
+    /* Set a specific width for the image */
+    height: 400px !important;
+    /* Set a specific height for the image */
+    object-fit: cover;
+}
+
+.new {
+    transition: all 0.5s ease;
+    /* Smooth transition for bottom property */
+    bottom: 200px;
+}
+
+.end {
+    transition: all 0.5s ease;
+    /* Smooth transition for bottom property */
+    bottom: -400px !important;
+}
+
+.startblog {
+    margin-top: 20px;
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+#ul{
+    padding: 20px;
+}
+.work{
+    padding: 10px 20px;
+    border-radius: 16px;
+    margin-top: 10px;
+    background-color: whitesmoke;
+}
+.a1 {
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+
+.upl {
+    border-radius: 12px;
+    background-color: rgb(58, 53, 53);
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 6px 12px;
+    margin-left: 40px;
+}
+
+
+#edit,
+#del {
+    cursor: pointer;
+    width: 5em;
+    background-color: blueviolet;
+    color: white;
+    font-weight: 600;
+    height: 2em;
+    border-radius: 30em;
+    font-size: 12px;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#edit:hover,
+#del:hover {
+    background-color: darkviolet;
+    transform: scale(1.05);
+}
+.img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bt {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}
+
+@media (max-width: 768px) {
+    .bt {
+        right: 50px;
+        top: 5px;
+    }
+
+    #edit,
+    #del {
+        width: 4em;
+        font-size: 10px;
+    }
+}

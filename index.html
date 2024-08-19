@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <!-- bootsrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- font awesom cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+    
+    <div id="blogs" class="blogs">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">
+                    <!-- <i class="fa-regular fa-user" style="color: #FFD43B;"></i> -->
+                    Bloging Web
+                    <span style="font-weight: bold;" id="showuser"></span>
+                </a>
+                <div class="nav-item dropdown image-container position-relative">
+                    <span class="nav-item myblog" id="my-blog" >
+                        My Blogs
+            </span>
+                    <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img id="userImage" src="./files/new.images/userimage.png" alt="Your Image">
+                    </button>
+                    <ul class="dropdown-menu text-center">
+                        <li><button class="dropdown-item" type="button" id="profile">View Profile</button></li>
+                    </ul>
+                </div>
+
+                <div class="btns" style="display: flex; gap: 20px;">
+                    <button type="button" class="btn btn-primary text-white fw-bolder" id="sign">Sign in</button>
+                    <button type="button" class="btn btn-dark text-white fw-bolder" id="log">Log in</button>
+                </div>
+            </div>
+        </nav>
+        <div class="div1">
+            <h1 style="color: white; font-weight: 600;" id="heading"></h1>
+            <h5 style="color: white;">Create a unique and beautiful post easily </h5>
+            <button id="btn1">Create Post</button>
+        </div>
+        <div class="theme">
+            <div class="image-div1">
+                <img src="./files/new.images/post 1.png" alt="">
+            </div>
+            <div class="image-div1">
+                <img src="./files/new.images/post 2.png" alt="">
+            </div>
+            <div class="image-div1">
+                <img src="./files/new.images/post 3.png" alt="">
+                <!-- <img src="new.images/tree 1.png" alt="" width="120px" height="120px" style="position: absolute; left: -80%; bottom: 40px;opacity: 0.5;  "> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div id="startblog">
+        <h1 class="a1">All Blogs</h1>
+        <ul id="ul">
+            <!-- <li class="work" style="display: flex;">
+                <img src="./files/new.images/userimage.png" alt="" width="120px" height="120x">
+                <div style="margin-left: 30px;">
+                 <h4>Farhhan</h4>
+                 <span style="font-weight: 600" id="title"><span> <span id="date"></span>
+                 <p style="margin-top: 30px;" id="showblog"></p>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create Blog</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Description</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <img  src="./files/new.images/userimage.png" alt=""id="blogimage" width="80px"height="80px">
+                        <input type="file" id="imageupload" accept="image/*" style="display: none;">
+                        <label class="upl" for="imageupload" >Upload image</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="post">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- boostrap cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- vanilaa javascript -->
+    <script src="app2.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- sweet alert cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body style="background-image: url(../images/bg1.avif);">
+
+    <div class="container">
+
+        <div class="form1" id="form1">
+            <h2 style="text-align: center;
+        margin-bottom: 20px;">Sign up </h2>
+
+            <label for="username">Username :</label>
+            <i class="fa-regular fa-user dd"></i>
+            <input type="text" placeholder="enter your name" id="username" oninput="display()"> <br>
+            <label for="gmail">Gmail :</label>
+            <i class="fa-regular fa-envelope es"></i>
+            <input type="email" placeholder="enter your gmail" id="gmail" oninput="display()"><br>
+            <label for="password">Password :</label>
+            <i class="fa-solid fa-lock ps"></i>
+            <input type="password" placeholder="enter your password" id="password" oninput="display()">
+            <br>
+            <button id="submit">sign up</button>
+            <p style="text-align: center;margin-top: 15px;">already have an <button id="already">account ?</button></p>
+        </div>
+    </div>
+
+
+    <script type="module">
+        import { auth, createUserWithEmailAndPassword, db, collection, addDoc } from "./firebase.js";
+        // authentication
+        // variables
+        let userrr = document.getElementById("username");
+        let email = document.getElementById("gmail")
+        let password = document.getElementById("password");
+        let already = document.getElementById("already");
+        let dbcollection = collection(db, "users");
+        let sumbit = document.getElementById("submit");
+
+        submit.addEventListener("click", async function () {
+            try {
+                // Create a new user with email and password
+                const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
+                const user = userCredential.user;
+
+                // Create a Firestore document for the new user
+                const userObj = {
+                    name: userrr.value,
+                    email: email.value, 
+                    uid: user.uid
+                };
+
+                let docRef = await addDoc(dbcollection, userObj);
+
+                email.value = "";
+                password.value = "";
+                userrr.value = "";
+                window.location.href ="../index.html";
+
+            } catch (error) {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                if (errorCode === 'auth/email-already-in-use') {
+                    alert("User already exists");
+                } else {
+                    console.error("Error creating user: ", errorMessage);
+                }
+                if (error.message.includes("Firestore")) {
+                    console.error("Error adding document: ", error);
+                }
+            }
+        });
+
+
+        already.addEventListener("click", () => {
+            location.href = "./login.html";
+        })
+
+        // firestore database
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // show and hide function
+        let i = document.querySelectorAll("i");
+
+        let display = function () {
+            if (userrr.value === "") {
+                i[0].style.display = "block";
+            } else {
+                i[0].style.display = "none";
+            }
+            if (email.value === "") {
+                i[1].style.display = "block";
+
+            } else {
+                i[1].style.display = "none";
+            }
+            if (password.value === "") {
+                i[2].style.display = "block";
+
+            } else {
+                i[2].style.display = "none";
+            }
+        }
+        window.display = display
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="background-image: url(../images/bg1.avif);">
+    <div class="container">
+        <div class="form2" id="form2">
+            <h2 style="text-align: center;margin-bottom: 20px;">Log In</h2>
+            <label for="username">Name :</label>
+            <i class="fa-regular fa-user ss"></i>
+            <input type="text" placeholder="enter your username" id="name2" style="margin-left: 58px;"
+                oninput="display()"><br>
+            <label for="gmail" style="margin-right: 10px;">Gmail :</label>
+            <i class="fa-regular fa-envelope ee"></i>
+            <input type="email" placeholder="enter your gmail" id="cgmail" oninput="display()"><br>
+            <label for="password" style="margin-right: 10px;">Password :</label>
+            <i class="fa-solid fa-lock pp"></i>
+            <input type="password" placeholder="enter your password" id="cpassword" oninput="display()">
+            <br>
+            <button id="login">log in</button>
+            <p style="text-align: center;margin-top: 15px;">Don;t have any <button id="dont">account?</button></p>
+
+        </div>
+    </div>
+
+    <script type="module">
+       import { app, auth, signInWithEmailAndPassword } from "./firebase.js";
+
+        let loginame = document.getElementById("name2");
+        let cemail = document.getElementById("cgmail");
+        let cpassword = document.getElementById("cpassword");
+        let dont = document.getElementById("dont");
+        let btn = document.getElementById("login");
+
+        window.onload = function (){
+            alert("please Log in")
+        }
+
+        btn.addEventListener("click", function () {
+            signInWithEmailAndPassword(auth, cemail.value, cpassword.value)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    // ...
+                    window.location.href = "../index.html";
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    if (errorCode || errorMessage) {
+                        alert("not found")
+                    }
+                    console.log("errorcode ==>", errorCode);
+                    console.log("errormsg ==>", errorMessage);
+                });
+        });
+
+        dont.addEventListener("click", () => {
+            location.href = "./register.html"
+        })
+
+        let i = document.querySelectorAll("i");
+        const display = function () {
+            if (loginame.value === "") {
+                i[0].style.display = "block";
+            } else {
+                i[0].style.display = "none";
+            }
+
+            if (cemail.value === "") {
+                i[1].style.display = "block";
+            } else {
+                i[1].style.display = "none";
+            }
+
+            if (cpassword.value === "") {
+                i[2].style.display = "block";
+            } else {
+                i[2].style.display = "none";
+            }
+        }
+
+        window.display = display;
+    </script>
+</body>
+
+</html>
